@@ -33,6 +33,7 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
+
     <?php wp_head(); ?>
 </head>
 
@@ -42,11 +43,14 @@
 $enable_preloader = storecommerce_get_option('enable_site_preloader');
 if (1 == $enable_preloader):
     ?>
-    <div id="af-preloader">
-
-        <svg class="spinner-container" width="65px" height="65px" viewBox="0 0 52 52">
-            <circle class="path" cx="26px" cy="26px" r="20px" fill="none" stroke-width="4px"/>
-        </svg>
+<!--    <div id="af-preloader">-->
+<!--        <svg class="spinner-container" width="65px" height="65px" viewBox="0 0 52 52">-->
+<!--            <circle class="path" cx="26px" cy="26px" r="20px" fill="none" stroke-width="4px"/>-->
+<!--        </svg>-->
+<!--    </div>-->
+    <div id="preloader-wrapper"></div>
+       <div id="preloader">
+    <img class="loader" src="./image/preloader.gif" alt="">
     </div>
 <?php endif; ?>
 

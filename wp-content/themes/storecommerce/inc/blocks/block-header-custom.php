@@ -6,6 +6,7 @@
  */
 ?>
 
+<div class="container-fluid">
 <div class="header-style-3">
     <div class="desktop-header clearfix">
         <?php
@@ -21,7 +22,6 @@
             
             <div class="fx-header-logo">
                 <a href="/" title="Перейти на Главная">
-<!--                    <img src="https://www.pereprava.plus/wp-content/uploads/2019/07/logo.gif" alt="">-->
                     <img src="https://www.pereprava.plus//wp-content/themes/storecommerce/images/logo-title.gif" alt="">
                 </a>
 
@@ -41,31 +41,13 @@
                                 'theme_location' => 'aft-primary-nav',
                                 'menu_id' => 'primary-menu',
                                 'container' => 'div',
-                                'container_class' => 'menu main-menu'
+                                'container_class' => 'menu main-menu '
                             ));
                             ?>
                         </nav><!-- #site-navigation -->
-
                     </div>
                 </div>
                 <div class="header-right-part">
-
-                    <div class="search aft-show-on-mobile">
-                        <div id="myOverlay" class="overlay">
-                            <span class="close-serach-form" title="Close Overlay">x</span>
-                            <div class="overlay-content">
-                                <?php custom_storecommerce_product_search_form(); ?>
-                            </div>
-                        </div>
-                        <button class="open-search-form"><i class="fa fa-search"></i></button>
-                    </div>
-                    <div class="account-user aft-show-on-mobile">
-                        <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>">
-                            <!--  my account --> <i class="fa fa-user-circle-o"></i>
-                        </a>
-                    </div>
-
-
                     <?php if (function_exists('YITH_WCWL')): ?>
                         <div class="wishlist-shop">
                             <span class="wishlist-icon">
@@ -76,7 +58,6 @@
                     <?php if (class_exists('WooCommerce')): ?>
                         <div class="account-user">
                             <?php
-
 
                             if (is_user_logged_in()) {
                                 $current_user = wp_get_current_user();
@@ -93,11 +74,30 @@
 
                             <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>"
                                title=" <?php echo esc_html($account_texts); ?>">
-                                <!--  my account --> <i class="fa fa-user-circle-o"></i>
+                                <!--  my account --> <i class="far fa-user-circle"></i>
 
                             </a>
                         </div>
                     <?php endif; ?>
+<!--                    <div class="search aft-show-on-mobile">-->
+<!--                        <div id="myOverlay" class="overlay">-->
+<!--                            <span class="close-serach-form" title="Close Overlay">x</span>-->
+<!--                            <div class="overlay-content">-->
+<!--                                --><?php //custom_storecommerce_product_search_form(); ?>
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <button class="open-search-form"><i class="fas fa-search"></i></button>-->
+<!--                    </div>-->
+<!--                    <div class="account-user aft-show-on-mobile">-->
+<!--                        <a href="--><?php //echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?><!--">-->
+<!--                             my account -->
+<!--                    <i class="far fa-user-circle"></i>-->
+<!---->
+<!--                        </a>-->
+<!--                    </div>-->
+
+
+
 <!--                    --><?php //if (class_exists('WooCommerce')): ?>
 <!---->
 <!--                        <div class="cart-shop">-->
@@ -115,6 +115,7 @@
                                 <span class="offcanvas">
                                      <a href="#offcanvasCollapse" class="offcanvas-nav">
                                           <i class="fa fa-th"></i>
+
                                        </a>
                                 </span>
                         </div>
@@ -125,10 +126,13 @@
             </div>
         </div>
 <!--        <hr class="fx-header-line">-->
-        <div class="search fx-search">
-            <?php custom_storecommerce_product_search_form(); ?>
-        </div>
 
+    <div class="search fx-search">
+        <?php custom_storecommerce_product_search_form(); ?>
     </div>
     <div id="fx-Overlay" class="overlay">
+
+
+
+
 </div>

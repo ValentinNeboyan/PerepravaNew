@@ -1666,23 +1666,25 @@ body.woocommerce-cart .top-cart-content.primary-bgcolor{
 .product-wrapper ul.product-item-meta.verticle .yith-btn a.button{
 	font-size: 0;
 	position: relative;
-	width: 40px;
-	height: 40px;
+	width: 26px;
+	height: 26px;
 	display: block;
 	padding: 0;
 }
 .product-wrapper ul.product-item-meta.verticle .yith-btn a:before{
+	/*width: 26px;*/
+	height: 26px;
 	position: absolute;
 	z-index: 2;
 	width: 100%;
-	line-height: 40px;
+	line-height: 30px;
 	left: 0;
 	top: 0;
 	text-align: center;
 	background-color: #fff;
 	color: #404040;
 	font-family: FontAwesome;
-	font-size: 16px;
+	font-size: 12px;
 	-webkit-transition: all 0.4s ease;
 	transition: all 0.4s ease;
 }
@@ -1889,7 +1891,8 @@ body.woocommerce div.product .woocommerce-tabs ul.tabs li a,
 body.woocommerce div.product .woocommerce-tabs ul.tabs li a:active,
 body.woocommerce div.product .woocommerce-tabs ul.tabs li a:visited
 {
-	color: #000;
+	/*color: #000;*/
+	color: #272727;
 	opacity: 0.75;
 }
 ins,

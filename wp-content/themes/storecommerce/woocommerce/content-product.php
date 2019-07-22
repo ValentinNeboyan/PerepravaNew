@@ -27,7 +27,7 @@ if (empty($product) || !$product->is_visible()) {
     return;
 }
 ?>
-<li <?php post_class(); ?>>
+<li class="slide_block" <?php post_class(); ?>>
 
     <?php $button_mode = storecommerce_get_option('aft_product_loop_button_display'); ?>
     <div class="product-wrapper <?php echo esc_attr($button_mode); ?>">
@@ -57,11 +57,11 @@ if (empty($product) || !$product->is_visible()) {
         $url = storecommerce_get_featured_image($post->ID, 'storecommerce-thumbnail');
         $cat_display = storecommerce_get_option('aft_product_loop_category');
         ?>
-        <div class="product-image-wrapper">
-            <div class="horizontal">
+        <div class=" top_block_img grid__item grid__item--bg theme-11">
+            <div class=" tile-img-top">
             <?php
             if ($url): ?>
-                <a href="<?php the_permalink(); ?>">
+                <a href="<?php the_permalink(); ?>" class="tile-img-top__img-block tile-img-top__img-block_animate">
                 <img src="<?php echo esc_attr($url); ?>">
                 </a>
             <?php endif; ?>
@@ -71,6 +71,10 @@ if (empty($product) || !$product->is_visible()) {
 <!--                <li>--><?php //do_action('storecommerce_woocommerce_template_loop_add_to_cart'); ?><!--</li>-->
 <!--            </ul>-->
         </div>
+
+
+
+
             <?php if($product->get_average_rating()): ?>
                 <div class="product-rating-wrapper">
                     <?php do_action('storecommerce_woocommerce_template_loop_rating'); ?>
@@ -112,42 +116,65 @@ if (empty($product) || !$product->is_visible()) {
         //do_action( 'woocommerce_after_shop_loop_item' );
         ?>
 
-        <div class="product-description ">
+        <div class="product-description top_info">
 
             <?php if($cat_display == 'yes'): ?>
-                <span class="prodcut-catagory">
-                <?php storecommerce_post_categories(); ?>
-            </span>
+                <div class="top_info_title">
+                    <p> <?php storecommerce_post_categories(); ?></p>
+                    <p class="top_info_name">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_title(); ?>
+                        </a>
+                    </p>
+                    <p class="top_info_price"> <?php do_action('storecommerce_woocommerce_after_shop_loop_item_title'); ?></p>
+<?php if(!empty($product->get_attribute('number_of_seats'))){?>
+                    <p class="max_p">Максимально <?php echo $product->get_attribute('number_of_seats');?></p>
+                    <?php } ?>
+                <?php if(!empty($product->get_attribute('comfort_seats'))){?>
+                    <p class="comfort_p">Комфортно <?php echo $product->get_attribute('comfort_seats');?></p>
+                <?php } ?>
+                    <?php else:{?>
+
+                <?php } ?>
+                </div>
+<!--                <div class="top_info_price">-->
+<!--                    <p>--><?php //do_action('storecommerce_woocommerce_after_shop_loop_item_title'); ?><!--</p>-->
+<!--                </div>-->
+<!--                <span class="prodcut-catagory">-->
+<!--                --><?php //storecommerce_post_categories(); ?>
+<!--            </span>-->
             <?php endif; ?>
-            <h4 class="product-title">
-                <a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                </a>
-            </h4>
-            <?php if (in_array(WATER_CATEGORY, $categories)) :?>
-                    <?php if (  $product_attribute= $product->get_attribute('number_of_seats') ) { ?>
+<!--            <h4 class="product-title">-->
+<!--                <a href="--><?php //the_permalink(); ?><!--">-->
+<!--                    --><?php //the_title(); ?>
+<!--                </a>-->
+<!--            </h4>-->
 
-                    <span>Максимально: <?php echo wp_kses_post( $product_attribute ); ?></span>
+<!--            --><?php //if (in_array(WATER_CATEGORY, $categories)) :?>
+<!--                    --><?php //if (  $product_attribute= $product->get_attribute('number_of_seats') ) { ?>
+<!---->
+<!--                    <span>Максимально: --><?php //echo  $product_attribute  ?><!--</span>-->
+<!---->
+<!--                    --><?// }?>
+<!---->
+<!--                    --><?php //if (  $product_attribute= $product->get_attribute('comfort_seats') ) { ?>
+<!---->
+<!--                    <span>Комфортно: --><?php //echo  $product_attribute  ?><!--</span>-->
+<!---->
+<!--                    --><?// }?>
+<!--            --><?php //else: ?>
 
-                    <? }?>
+<!--                   --><?php //if (  $product_attribute= $product->get_attribute('number_of_seats') ) { ?>
+<!---->
+<!--                           <span>--><?php //echo  $product_attribute  ?><!--</span>-->
+<!---->
+<!--                    --><?// }?>
 
-                    <?php if (  $product_attribute= $product->get_attribute('comfort_seats') ) { ?>
-
-                    <span>Комфортно: <?php echo wp_kses_post( $product_attribute ); ?></span>
-
-                    <? }?>
-            <?php else: ?>
-
-                   <?php if (  $product_attribute= $product->get_attribute('number_of_seats') ) { ?>
-
-                           <span><?php echo wp_kses_post( $product_attribute ); ?></span>
-
-                    <? }?>
-
-            <?php endif;?>
-            <span class="price">
-  									<?php do_action('storecommerce_woocommerce_after_shop_loop_item_title'); ?>
-  								</span>
+<!--            --><?php //endif;?>
+<!--            <span class="price">-->
+<!--  									--><?php //do_action('storecommerce_woocommerce_after_shop_loop_item_title'); ?>
+<!--  								</span>-->
         </div>
     </div>
 </li>
+

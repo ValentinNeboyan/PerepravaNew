@@ -523,7 +523,7 @@ if (!function_exists('storecommerce_product_search_form')) :
     function storecommerce_product_search_form()
     {
         ?>
-        <form role="search" method="get" class="form-inline woocommerce-product-search"
+        <form role="search" method="get" class="form-inline woocommerce-product-search search_block"
               action="<?php echo esc_url(home_url('/')); ?>">
 
             <div class="form-group style-3-search">
@@ -562,8 +562,14 @@ if (!function_exists('storecommerce_product_search_form')) :
                        placeholder="<?php echo esc_attr($search_placeholder); ?>"
                        value="<?php echo get_search_query(); ?>" name="s"/>
 
-                <button type="submit" value=""><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button type="submit" value=""><i class="fas fa-search"></i></button>
                 <input type="hidden" name="post_type" value="product"/>
+
+
+
+
+
+
 
             </div>
 
@@ -584,10 +590,10 @@ if (!function_exists('custom_storecommerce_product_search_form')) :
     function custom_storecommerce_product_search_form()
     {
         ?>
-        <form role="search" method="get" class="form-inline woocommerce-product-search"
+        <form role="search" method="get" class="search_block"
               action="<?php echo esc_url(home_url('/')); ?>">
 
-            <div class="form-group style-3-search custom">
+<!--            <div class="form-group style-3-search custom">-->
                 <?php
 
                 define('CITY_CATEGORY_ID', 25);
@@ -621,7 +627,7 @@ if (!function_exists('custom_storecommerce_product_search_form')) :
                 }
 
                 ?>
-                <input type="search" id="woocommerce-product-search-field" class="search-field<?php echo esc_attr($search_autocomplete_class) ?>"
+                <input type="search"class="search_input <?php echo esc_attr($search_autocomplete_class) ?>"
                        placeholder="Начните искать..."
                        value="<?php echo get_search_query(); ?>" name="s"/>
 <!--                       placeholder="<?php //echo esc_attr($search_placeholder); ?>"-->
@@ -643,9 +649,11 @@ if (!function_exists('custom_storecommerce_product_search_form')) :
 //                        }
 //                        ?>
 <!--                    </select>-->
-
-                    <select name="product_cat" class="cate-dropdown">
-                        <option value=""><?php echo '&mdash; '. esc_attr($cat_cities->name) .' &mdash;'; ?></option>
+<div class="search_field">
+            <div class="location_block">
+                <a class="location_img"><i class="fas fa-map-marker-alt"></i></a>
+                    <select name="product_cat" class="cate-dropdown" placeholder="Локация">
+                        <option value="">Локация</option>
                         <?php
                         foreach ($product_cats_cities as $product_cat) {
                             ?>
@@ -655,18 +663,26 @@ if (!function_exists('custom_storecommerce_product_search_form')) :
                         }
                         ?>
                     </select>
+            </div>
                 <?php endif; ?>
 
                 <label class="screen-reader-text"
                        for="woocommerce-product-search-field"><?php esc_html_e('Search for:', 'storecommerce'); ?></label>
 
-                <button class="fx-search-button" type="submit" value=""><i class="fa fa-search" aria-hidden="true"></i><span>ПОИСК</span></button>
+                <button class="search_button button-gradient" type="submit" value=""><i class="fa fa-search"></i></button>
+</div>
                 <input type="hidden" name="post_type" value="product"/>
-
+            <div class="search_field">
+                <button class="call order_button button-gradient">Организовать мне</button>
+                <button class="call order_button button-gradient_red">Срочный заказ</button>
             </div>
 
 
+<!--            </div>-->
+
+
         </form>
+
         <?php
     }
 endif;

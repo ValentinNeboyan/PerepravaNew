@@ -24,7 +24,7 @@
 <?php endif; ?>
 
 
-<footer class="site-footer">
+<footer class="footer_block">
     <?php $storecommerce_footer_widgets_number = storecommerce_get_option('number_of_footer_widget');
     if (1 == $storecommerce_footer_widgets_number) {
         $col = 'col-md-12';
@@ -119,11 +119,12 @@
             </div>
         <?php endif; ?>
     <?php endif; ?>
-    <div class="site-info">
-        <div class="container-wrapper">
-
-            <div class="site-info-wrap">
-
+<!--    <div class=" footer_block">-->
+<!--        <div class="container-wrapper footer_block">-->
+<!---->
+<!--            <div class="site-info-wrap footer_block">-->
+        <div class="container-fluid">
+            <div class="footer_info">
 
                 <?php
                 $storecommerce_secure_payment_badge = storecommerce_get_option('secure_payment_badge');
@@ -146,15 +147,32 @@
 //                        ?>
 
 <!--                </div>-->
-                <div class="footer-contacts">
-                    <a href="mailto:perepravaplus@gmail.com" class="footer-mail">perepravaplus@gmail.com</a>
-                    <a href="tel:+380669284338" class="footer-phone"> +38 (066) 928-43-38</a>
+<!--                <div class="footer-contacts">-->
+<!--                    <a href="mailto:perepravaplus@gmail.com" class="footer-mail">perepravaplus@gmail.com</a>-->
+<!--                    <a href="tel:+380669284338" class="footer-phone"> +38 (066) 928-43-38</a>-->
+<!--                </div>-->
+<!--                <div class="social">-->
+<!--                    				<span>Мы в соц сетях:</span>-->
+<!--                    <a class="instagram-icon" href="https://instagram.com/perepravaplus?igshid=yfiei4ysn8zt" target="_blank"></a>-->
+<!--                    <a class="facebook-icon" href="https://facebook.com/perepravaplus.zp" target="_blank"></a>-->
+<!--                </div>-->
+
+
+                <div class="contact_block">
+                    <a href="mailto:perepravaplus@gmail.com" class="">perepravaplus@gmail.com</a>
                 </div>
-                <div class="social">
-                    <!--					<span>Мы в соц сетях:</span>-->
-                    <a class="instagram-icon" href="https://instagram.com/perepravaplus?igshid=yfiei4ysn8zt" target="_blank"></a>
-                    <a class="facebook-icon" href="https://facebook.com/perepravaplus.zp" target="_blank"></a>
+                <div class="line_bottom"></div>
+                <div class="contact_block">
+                    <a href="tel:+380669284338" class=""> +38 (066) 928-43-38</a>
                 </div>
+                <div class="line_bottom"></div>
+                <div class="soc_icon_block">
+                    <a  href="https://instagram.com/perepravaplus?igshid=yfiei4ysn8zt" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a  href="https://facebook.com/perepravaplus.zp" target="_blank"><i class="fab fa-facebook-square"></i></a>
+<!--                    <a href="#"> <i class="fab fa-instagram"></i></a>-->
+<!--                    <a href=""> <i class="fab fa-facebook-square"></i></a>-->
+                </div>
+
 
                 <?php
                 if (!empty($storecommerce_secure_payment_badge)):
@@ -173,9 +191,10 @@
                 <?php endif; ?>
             </div>
         </div>
-    </div>
+<!--    </div>-->
 </footer>
-</div>
+
+
 <a id="scroll-up" class="secondary-color">
     <i class="fa fa-angle-up"></i>
 </a>

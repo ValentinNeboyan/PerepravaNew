@@ -196,6 +196,10 @@ if (!function_exists('storecommerce_fonts_url')):
             $fonts[] = 'Source+Sans+Pro:400,400i,700,700i';
         }
 
+        if ('off' !== _x('on', 'Noto Sans JP display swap: on or off', 'storecommerce')) {
+            $fonts[] = 'Source+Sans+Pro:400,400i,700,700i';
+        }
+
         /* translators: If there are characters in your language that are not supported by Lato, translate this to 'off'. Do not translate into your own language. */
         if ('off' !== _x('on', 'Lato font: on or off', 'storecommerce')) {
             $fonts[] = 'Raleway:400,300,500,600,700,900';
@@ -225,8 +229,15 @@ function storecommerce_scripts()
     wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/assets/owl-carousel-v2/assets/owl.carousel' . $min . '.css');
     wp_enqueue_style('owl-theme-default', get_template_directory_uri() . '/assets/owl-carousel-v2/assets/owl.theme.default.css');
     wp_enqueue_style('sidr', get_template_directory_uri() . '/assets/sidr/css/jquery.sidr.dark.css');
+    wp_enqueue_style('style', get_template_directory_uri() . '/assets/style/style.css');
+    wp_enqueue_style( 'pereprava-fontawesome', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css' );
+    wp_enqueue_style( 'pereprava-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
 
     wp_enqueue_script('matchheight', get_template_directory_uri() . '/assets/jquery-match-height/jquery.matchHeight' . $min . '.js', array('jquery'), '', true);
+    wp_enqueue_script('js', get_template_directory_uri() . '/assets/js.js', array('jquery'), '', true);
+    wp_enqueue_script( 'pereprava-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), '20151215', true );
+    wp_enqueue_script( 'pereprava-cloudflare', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array(), '20151215', true );
+
 
 
     $fonts_url = storecommerce_fonts_url();
@@ -241,6 +252,7 @@ function storecommerce_scripts()
      */
     if (class_exists('WooCommerce')) {
         wp_enqueue_style('storecommerce-woocommerce-style', get_template_directory_uri() . '/woocommerce.css');
+
 
         $font_path = WC()->plugin_url() . '/assets/fonts/';
         $inline_font = '@font-face {
@@ -270,11 +282,12 @@ function storecommerce_scripts()
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap' . $min . '.js', array('jquery'), '', true);
     wp_enqueue_script('sidr', get_template_directory_uri() . '/assets/sidr/js/jquery.sidr' . $min . '.js', array('jquery'), '', true);
     wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/owl-carousel-v2/owl.carousel' . $min . '.js', array('jquery'), '', true);
+
     if (function_exists('YITH_WCWL')){
         wp_enqueue_script('storecommerce-wishlist-script', get_template_directory_uri() . '/assets/wishlist.js', array('jquery'), '', true);
     }
     wp_enqueue_script('storecommerce-script', get_template_directory_uri() . '/assets/script.js', array('jquery', 'jquery-ui-accordion'), '', 1);
-    
+
 
    $disable_sticky_header_option = storecommerce_get_option('disable_sticky_header_option');
     if($disable_sticky_header_option == false ){        
@@ -496,3 +509,33 @@ function remove_admin_bar() {
         show_admin_bar(false);
     }
 }
+
+// Добавляем поля
+add_action( 'woocommerce_product_options_general_product_data', 'woo_add_custom_general_fields' );
+function woo_add_custom_general_fields() {
+    global $woocommerce, $post;
+    echo '<div class="options_group">';
+// текстовое поле
+    woocommerce_wp_text_input(
+        array(
+            'id' => 'max_people',
+            'label'       => __( 'Максимальное количество', 'woocommerce' ),
+            'placeholder' => '',
+            'desc_tip'    => 'true',
+            'description' => __( 'Максимальное', 'woocommerce' )
+        )
+
+    );
+    woocommerce_wp_text_input(
+        array(
+            'id' => 'comf_people',
+            'label'       => __( 'Комфортное количество', 'woocommerce' ),
+            'placeholder' => '',
+            'desc_tip'    => 'true',
+            'description' => __( 'Комфортное', 'woocommerce' )
+        )
+
+    );
+    echo '</div>';
+}
+
