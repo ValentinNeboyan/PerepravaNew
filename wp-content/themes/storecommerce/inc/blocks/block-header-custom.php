@@ -6,7 +6,7 @@
  */
 ?>
 
-<div class="container-fluid">
+<div class="container_custom">
 <div class="header-style-3">
     <div class="desktop-header clearfix">
         <?php
@@ -22,7 +22,7 @@
             
             <div class="fx-header-logo">
                 <a href="/" title="Перейти на Главная">
-                    <img src="https://www.pereprava.plus//wp-content/themes/storecommerce/images/logo-title.gif" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/image/new_logo.gif" alt="">
                 </a>
 
             </div>
@@ -47,6 +47,10 @@
                         </nav><!-- #site-navigation -->
                     </div>
                 </div>
+
+
+
+
                 <div class="header-right-part">
                     <?php if (function_exists('YITH_WCWL')): ?>
                         <div class="wishlist-shop">
@@ -72,9 +76,9 @@
 
                             ?>
 
-                            <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>"
+                            <a class="aft-wishlist-trigger" href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>"
                                title=" <?php echo esc_html($account_texts); ?>">
-                                <!--  my account --> <i class="far fa-user-circle"></i>
+                                <!--  my account --> <i class="far fa-user"></i>
 
                             </a>
                         </div>

@@ -126,15 +126,20 @@ if (empty($product) || !$product->is_visible()) {
                             <?php the_title(); ?>
                         </a>
                     </p>
-                    <p class="top_info_price"> <?php do_action('storecommerce_woocommerce_after_shop_loop_item_title'); ?></p>
-<?php if(!empty($product->get_attribute('number_of_seats'))){?>
+                    <?php if(!empty($product->get_meta( 'usd_price'))){?>
+                        <p class="woocommerce-Price-amount"> <?php echo $product->get_meta( 'usd_price', true ); ?> USD</p>
+                    <?php } ?>
+                    <?php if(!empty($product->get_meta('eur_price'))){?>
+                        <p class="woocommerce-Price-amount"><?php echo $product->get_meta('eur_price');?> EUR</p>
+                    <?php } ?>
+                    <?php if(empty($product->get_meta('usd_price')) && empty($product->get_meta( 'usd_price'))){?>
+                        <p class="top_info_price"> <?php do_action('storecommerce_woocommerce_after_shop_loop_item_title'); ?></p>
+                    <?php } ?>
+                <?php if(!empty($product->get_attribute('number_of_seats'))){?>
                     <p class="max_p">Максимально <?php echo $product->get_attribute('number_of_seats');?></p>
                     <?php } ?>
                 <?php if(!empty($product->get_attribute('comfort_seats'))){?>
                     <p class="comfort_p">Комфортно <?php echo $product->get_attribute('comfort_seats');?></p>
-                <?php } ?>
-                    <?php else:{?>
-
                 <?php } ?>
                 </div>
 <!--                <div class="top_info_price">-->

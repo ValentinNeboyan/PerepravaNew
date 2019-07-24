@@ -492,7 +492,7 @@ if (!function_exists('storecommerce_woocommerce_header_wishlist')) {
                     <?php
                     //$wishlist_icon = storecommerce_get_option('wishlist_icon', true);
                     //if( $wishlist_icon ){
-                    echo '<i class="fa fa-heart"></i>';
+                    echo '<i class="far fa-heart"></i>';
                     //}
                     ?>
                     <span class="aft-woo-counter"><?php echo absint(yith_wcwl_count_all_products()); ?></span>

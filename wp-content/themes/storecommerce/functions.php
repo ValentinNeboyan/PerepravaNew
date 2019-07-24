@@ -269,7 +269,7 @@ function storecommerce_scripts()
         wp_add_inline_style('storecommerce-woocommerce-style', $inline_font);
     }
     wp_enqueue_style('storecommerce-style', get_stylesheet_uri());
-    wp_enqueue_script('newscript', get_template_directory_uri() . '/js/fx-app.js');
+
     wp_enqueue_script('storecommerce-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
     wp_enqueue_script('storecommerce-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -414,7 +414,7 @@ function hide_admin_notices() {
     remove_action( 'admin_notices', 'update_nag', 3 );
 }
 
-
+wp_enqueue_script('newscript', get_template_directory_uri() . '/js/fx-app.js');
 
 
 add_filter( 'rwmb_meta_boxes', 'prefix_meta_boxes' );
@@ -518,24 +518,46 @@ function woo_add_custom_general_fields() {
 // текстовое поле
     woocommerce_wp_text_input(
         array(
-            'id' => 'max_people',
-            'label'       => __( 'Максимальное количество', 'woocommerce' ),
+            'id' => 'usd_price',
+            'label'       => __( 'USD', 'woocommerce' ),
             'placeholder' => '',
             'desc_tip'    => 'true',
-            'description' => __( 'Максимальное', 'woocommerce' )
+            'description' => __( 'USD', 'woocommerce' )
         )
 
     );
     woocommerce_wp_text_input(
         array(
-            'id' => 'comf_people',
-            'label'       => __( 'Комфортное количество', 'woocommerce' ),
+            'id' => 'eur_price',
+            'label'       => __( 'EUR', 'woocommerce' ),
             'placeholder' => '',
             'desc_tip'    => 'true',
-            'description' => __( 'Комфортное', 'woocommerce' )
+            'description' => __( 'EUR', 'woocommerce' )
         )
 
     );
     echo '</div>';
 }
+add_action( 'woocommerce_process_product_meta', 'art_woo_custom_fields_save', 10 );
+function art_woo_custom_fields_save( $post_id )
+{
+    // Сохранение текстового поля
+    $woocommerce_text_field = $_POST['usd_price'];
+    if (!empty($woocommerce_text_field)) {
+        update_post_meta($post_id, 'usd_price', esc_attr($woocommerce_text_field));
+    }
+    if (empty($woocommerce_text_field)) {
+        update_post_meta($post_id, 'usd_price', esc_attr($woocommerce_text_field));
+    }
+
+    $woocommerce_text_field = $_POST['eur_price'];
+    if (!empty($woocommerce_text_field)) {
+        update_post_meta($post_id, 'eur_price', esc_attr($woocommerce_text_field));
+    }
+    if (empty($woocommerce_text_field)) {
+        update_post_meta($post_id, 'eur_price', esc_attr($woocommerce_text_field));
+    }
+}
+
+
 

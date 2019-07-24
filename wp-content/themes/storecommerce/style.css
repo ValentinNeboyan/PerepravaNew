@@ -506,7 +506,7 @@ body.home .header-style-2.aft-transparent-header.aft-sticky-navigation,
 }
 
 .header-style-3 {
-	max-width: 1200px;
+	/*max-width: 1200px;*/
 	margin: auto;
 }
 
@@ -762,9 +762,8 @@ dd {
 
 img {
 	height: auto;
-	/* Make sure images are scaled correctly. */
-	max-width: 100%;
-	/* Adhere to container width. */
+	max-width: 75%;
+	margin-top: 20px;
 }
 
 figure {
@@ -1221,7 +1220,7 @@ li:hover {
 	float: right;
 	padding: 25px 0;
 	text-align: right;
-	font-size: 16px;
+	font-size: 20px;
 }
 .header-right-part .search {
 	display: inline-block;
@@ -1252,6 +1251,8 @@ li:hover {
 
 a.aft-wishlist-trigger {
 	color: #63cfd4;
+	-webkit-transition:all .4s ease-in-out;
+	transition:all .4s ease-in-out;
 }
 
 #submit {
@@ -1518,6 +1519,17 @@ body .header-style-2.aft-transparent-header .main-navigation .menu > li > a,
 body .header-style-2.aft-transparent-header .header-left-part .logo-brand .site-description {
     color: #63cfd4;
     /*color: #404040;*/
+}
+.account-user > a {
+	-webkit-transition:all .4s ease-in-out;
+	transition:all .4s ease-in-out;
+}
+
+.account-user > a:hover{
+	font-size: 20px;
+	color: #ff3536;
+	-webkit-transition:all .4s ease-in-out;
+	transition:all .4s ease-in-out;
 }
 .header-style-2 .desktop-header {
 	display: flex;
@@ -2378,7 +2390,7 @@ span.product-count span.item-texts:after{
 }
 
 .product-wrapper {
-	width: 105%;
+	/*width: 105%;*/
 	background-color: #FFFFFF;
 	/*border: 1px solid #efefef;*/
 	-webkit-transition: all 0.4s ease;
@@ -2416,6 +2428,8 @@ span.product-count span.item-texts:after{
 .product-description {
 	text-align: center;
 	padding: 10px;
+	width: 70%;
+	margin: 0 auto;
 }
 span.prodcut-catagory {
 	font-size: 12px;
@@ -2975,7 +2989,7 @@ a:hover, a:active {
 	font-weight: 900;
 	padding: 0 5px;
 	color: inherit;
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: bold;
 }
 .main-navigation .menu ul ul,
@@ -3023,7 +3037,7 @@ a:hover, a:active {
 	width: 200px;
 	color: #4d565b;
 	font-family: 'Noto Sans JP', sans-serif;
-	font-size: 12px;
+	font-size: 18px;
 }
 
 .main-navigation ul li:hover > ul,
@@ -3036,7 +3050,7 @@ a:hover, a:active {
 	position: relative;
 	display: block;
 	transition-duration: 0.5s;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	font-size: 14px;
 	padding: 15px;
 	font-weight: 700;
@@ -3057,21 +3071,24 @@ a:hover, a:active {
 
 }
 .main-navigation .menu > li > a:before, .sub-menu li > a:before {
+	background-color: #66eafffc;
 	content: "";
 	position: absolute;
-	top: calc(100% - 20px);
-	/*border-bottom: 5px solid #46acf6;*/
+	top: calc(100% - 15px);
+	/* border-bottom: 5px solid #46acf6; */
 	width: 0px;
-	/*left: 50%;*/
-	height: 3px;
-	background-image: linear-gradient(to right, #0994ac, #0cdae8, #1f9abf, #0598ac);
-	/*right: 50%;*/
+	/* left: 50%; */
+	height: 2px;
+	/* background-image: linear-gradient(to right, #0994ac, #0cdae8, #1f9abf, #0598ac); */
+	/* right: 50%; */
 	transition: all 0.5s ease;
  }
 .underline-from-center {
 	position: relative;}
 .main-navigation .menu > li > a:hover, .sub-menu li > a:hover{
-	color: #000000!important;
+	color: #66eafffc!important;
+	-webkit-transition: all 0.45s ease-out;
+	transition: all 0.45s ease-out;
 }
 .main-navigation .menu > li > a:hover:before, .sub-menu li > a:hover:before{
 	/*left: 0;*/
@@ -4453,10 +4470,10 @@ p.comment-form-url input, p.comment-form-email input, p.comment-form-author inpu
 	display: block;
 	font-weight: normal;
 }
-.wpcf7-form-control-wrap input {
-	width: 100%;
-	margin-top: 5px;
-}
+/*.wpcf7-form-control-wrap input {*/
+/*	width: 100%;*/
+/*	margin-top: 5px;*/
+/*}*/
 .wpcf7-form .wpcf7-submit{
 	margin: auto;
 	border: unset;
@@ -5066,7 +5083,7 @@ body .af-cart-icon-and-count:after
 {
 	color: #4d565b;
 	font-family: 'Noto Sans JP', sans-serif;
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: 700;
 	line-height: 52.52px;
 	text-transform: uppercase;
@@ -5095,7 +5112,7 @@ span.offer-date-counter > span,
 body span.menu-description,
 body span.title-note,
 body .badge-wrapper span.onsale:before,
-body .header-right-part .aft-wooicon .aft-woo-counter,
+/*body .header-right-part .aft-wooicon .aft-woo-counter,*/
 body .header-right-part .af-cart-icon-and-count .item-count,
 body span.product-count span.item-texts,
 body .post-thumbnail-wrap .posts-date,

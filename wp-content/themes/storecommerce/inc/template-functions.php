@@ -673,8 +673,12 @@ if (!function_exists('custom_storecommerce_product_search_form')) :
 </div>
                 <input type="hidden" name="post_type" value="product"/>
             <div class="search_field">
-                <button class="call order_button button-gradient">Организовать мне</button>
-                <button class="call order_button button-gradient_red">Срочный заказ</button>
+                <a href="#"  class="call order_button button-gradient ten_proc">
+                    <span>Найти вместо меня</span>
+                    <i>10%</i>
+                </a>
+<!--                <button class="call order_button button-gradient">Найти вместо меня</button>-->
+                <button class=" order_button button-gradient_red">Срочный заказ</button>
             </div>
 
 

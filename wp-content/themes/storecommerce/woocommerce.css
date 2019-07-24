@@ -4,7 +4,10 @@
 WooCommerce styles override
 */
 
-
+@font-face {
+	font-family: 'Noto Sans JP', sans-serif; /* Имя шрифта */
+	src: url("assets/font-awesome/HelveticaNeue-CondensedBold.ttf"); /* Путь к файлу со шрифтом */
+}
 #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text {
 
 
@@ -1535,9 +1538,10 @@ select {
 }
 .header-right-part .aft-wooicon .aft-woo-counter,
 .header-right-part .af-cart-icon-and-count .item-count {
+	font-family: Noto Sans JP  san-serif;
 	line-height: 12px;
 	color: #fff;
-	background: #d60000;
+	background: #ef0707;
 	border-radius: 60px;
 	font-size: 12px;
 	display: inline-block;
@@ -2021,9 +2025,9 @@ body .product-wrapper
 .woocommerce .products ul,
 .woocommerce ul.products{margin: 0;}
 
-.woocommerce ul[class*="columns-"] {
-	margin: 0 -15px;
-}
+/*.woocommerce ul[class*="columns-"] {*/
+/*	margin: 0 -15px;*/
+/*}*/
 
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
 	margin: 0;

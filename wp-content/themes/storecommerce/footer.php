@@ -25,6 +25,15 @@
 
 
 <footer class="footer_block">
+
+    <div class="modal-container">
+        <div class="modal">
+            <button id="myButton"></button>
+
+                <?php echo do_shortcode('[contact-form-7 id="732" title="Найти вместо меня"]')?>
+        </div>
+    </div>
+
     <?php $storecommerce_footer_widgets_number = storecommerce_get_option('number_of_footer_widget');
     if (1 == $storecommerce_footer_widgets_number) {
         $col = 'col-md-12';
@@ -123,6 +132,8 @@
 <!--        <div class="container-wrapper footer_block">-->
 <!---->
 <!--            <div class="site-info-wrap footer_block">-->
+
+
         <div class="container-fluid">
             <div class="footer_info">
 
@@ -173,7 +184,6 @@
 <!--                    <a href=""> <i class="fab fa-facebook-square"></i></a>-->
                 </div>
 
-
                 <?php
                 if (!empty($storecommerce_secure_payment_badge)):
                     $storecommerce_secure_payment_badge = absint($storecommerce_secure_payment_badge);
@@ -190,9 +200,14 @@
                     </div>
                 <?php endif; ?>
             </div>
+
         </div>
+
 <!--    </div>-->
 </footer>
+<div class="footer_down_info">
+    Pereprava production by Family brand supported by <a href="https://format4.plus/">Format</a>
+</div>
 
 
 <a id="scroll-up" class="secondary-color">
