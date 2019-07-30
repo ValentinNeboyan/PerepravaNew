@@ -259,6 +259,25 @@
 <a id="scroll-up" class="secondary-color">
     <i class="fa fa-angle-up"></i>
 </a>
+<div class="fx-location-popup">
+    <div id="close-location" class="button">ЗАКРЫТЬ</div>
+    <?php
+    $product = get_post(get_the_ID());
+    $attributes = get_post_meta(get_the_ID());
+
+    $screenWidth = $_COOKIE['screenWidth'] ? $_COOKIE['screenWidth'].'px' : '640px';
+    $screenHeight = $_COOKIE['screenHeight'] ? $_COOKIE['screenHeight'].'px' : '480px';
+
+    echo rwmb_meta( 'map', array(
+        'width'        => $screenWidth,
+        'height'       => $screenHeight,
+        'zoom'         => 11,
+        'marker'       => true,
+        'marker_title' => 'Кликни меня',
+        'info_window'  => '<h3>'.$product->post_title.'</h3><p>'.$attributes['map'][0].'</p>.',
+    ) );
+    ?>
+</div>
 <?php wp_footer(); ?>
 
 </body>

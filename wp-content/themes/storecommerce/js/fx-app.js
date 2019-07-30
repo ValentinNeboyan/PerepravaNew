@@ -1,5 +1,9 @@
 jQuery( function( $ ) {
 
+    //set cookies for google maps popup
+    Cookies.set('screenWidth', screen.width);
+    Cookies.set('screenHeight', screen.height);
+
     $(document).on('click', '.fx-video-popup', function () {
         $('.fx-product-youtube').addClass('active');
         $(this).addClass('active');
@@ -38,13 +42,18 @@ jQuery( function( $ ) {
     });
 
     $(document).on('click', '.fx-location-button', function () {
-        return false;
+
         $(this).addClass('active');
         $('.fx-location-popup').css('display', 'flex');
     });
 
     $(document).on('click', '.fx-location-button.active', function () {
         $(this).removeClass('active');
+        $('.fx-location-popup').css('display', 'none');
+    });
+
+    $(document).on('click', '#close-location', function () {
+        $('.fx-location-button.active').removeClass('active');
         $('.fx-location-popup').css('display', 'none');
     });
     

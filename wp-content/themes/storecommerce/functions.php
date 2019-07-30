@@ -476,13 +476,13 @@ function prefix_meta_boxes( $meta_boxes ) {
                 'type'          => 'map',
 
                 // Локация по умолчанию: формат: 'latitude,longitude[,zoom]' (zoom не обязательно)
-                'std'           => '47.8106211,35.0471084[,11.71]',
+                'std'           => '47.835743579438045, 35.1437694525473',
 
                 // ID текстового поля для адреса
                 'address_field' => 'address',
 
                 // Google API ключ
-                'api_key'       => 'XXXXXXXXX',
+                'api_key'       => 'AIzaSyD1gJ5sQz487v4qNWZS6GKzJ2aMidG_lYY',
             ),
 
         ),
@@ -580,6 +580,4 @@ function art_woo_custom_fields_save( $post_id )
         update_post_meta($post_id, 'for_hour', esc_attr($woocommerce_text_field));
     }
 }
-
-
 
