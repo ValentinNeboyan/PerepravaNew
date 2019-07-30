@@ -233,6 +233,10 @@ function storecommerce_scripts()
     wp_enqueue_style( 'pereprava-fontawesome', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css' );
     wp_enqueue_style( 'pereprava-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
 
+
+
+
+
     wp_enqueue_script('matchheight', get_template_directory_uri() . '/assets/jquery-match-height/jquery.matchHeight' . $min . '.js', array('jquery'), '', true);
     wp_enqueue_script('js', get_template_directory_uri() . '/assets/js.js', array('jquery'), '', true);
     wp_enqueue_script( 'pereprava-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), '20151215', true );
@@ -536,6 +540,17 @@ function woo_add_custom_general_fields() {
         )
 
     );
+    woocommerce_wp_text_input(
+        array(
+            'id' => 'for_hour',
+            'label'       => __( 'Время', 'woocommerce' ),
+            'placeholder' => '',
+            'desc_tip'    => 'true',
+            'description' => __( 'Время', 'woocommerce' )
+        )
+
+    );
+
     echo '</div>';
 }
 add_action( 'woocommerce_process_product_meta', 'art_woo_custom_fields_save', 10 );
@@ -556,6 +571,13 @@ function art_woo_custom_fields_save( $post_id )
     }
     if (empty($woocommerce_text_field)) {
         update_post_meta($post_id, 'eur_price', esc_attr($woocommerce_text_field));
+    }
+    $woocommerce_text_field = $_POST['for_hour'];
+    if (!empty($woocommerce_text_field)) {
+        update_post_meta($post_id, 'for_hour', esc_attr($woocommerce_text_field));
+    }
+    if (empty($woocommerce_text_field)) {
+        update_post_meta($post_id, 'for_hour', esc_attr($woocommerce_text_field));
     }
 }
 

@@ -53,7 +53,11 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+    <div class="search fx-search">
+        <?php custom_storecommerce_product_search_form(); ?>
+    </div>
+    <div id="fx-Overlay" class="overlay">
 <?php
+
 get_sidebar();
 get_footer();

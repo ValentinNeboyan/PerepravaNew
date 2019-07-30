@@ -14,6 +14,7 @@
 
 get_header();
 ?>
+
 <?php
 global $post;
 $store_contact_page = storecommerce_get_option('store_contact_page');
@@ -22,6 +23,7 @@ if($store_contact_page == $post->ID){
 } else {
 
 ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

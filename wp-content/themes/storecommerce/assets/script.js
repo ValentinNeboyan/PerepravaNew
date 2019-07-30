@@ -71,11 +71,11 @@
         },
 
         n.Preloader = function () {
-            e(window).load(function () {
-                e('.spinner-container').fadeOut();
-                e('#af-preloader').delay(1000).fadeOut('slow');
-            });
-        },
+        e(window).load(function () {
+            e('.spinner-container').fadeOut();
+            e('#af-preloader').delay(1000).fadeOut('slow');
+        });
+    },
 
         n.Search = function () {
             e(window).load(function () {

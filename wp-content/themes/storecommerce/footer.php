@@ -12,7 +12,7 @@
 ?>
 
 
-</div>
+
 
 <?php if (is_active_sidebar('express-off-canvas-panel')) : ?>
     <div id="sidr" class="primary-background">
@@ -29,7 +29,6 @@
     <div class="modal-container">
         <div class="modal">
             <button id="myButton"></button>
-
                 <?php echo do_shortcode('[contact-form-7 id="732" title="Найти вместо меня"]')?>
         </div>
     </div>
@@ -169,37 +168,85 @@
 <!--                </div>-->
 
 
-                <div class="contact_block">
-                    <a href="mailto:perepravaplus@gmail.com" class="">perepravaplus@gmail.com</a>
-                </div>
-                <div class="line_bottom"></div>
-                <div class="contact_block">
-                    <a href="tel:+380669284338" class=""> +38 (066) 928-43-38</a>
-                </div>
-                <div class="line_bottom"></div>
-                <div class="soc_icon_block">
-                    <a  href="https://instagram.com/perepravaplus?igshid=yfiei4ysn8zt" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a  href="https://facebook.com/perepravaplus.zp" target="_blank"><i class="fab fa-facebook-square"></i></a>
+
+                    <div class="footer_logo"></div>
+                    <div class="footer_contact">
+                        <span class="footer_block_title"> Контакты </span>
+                        <div class = "bottom_border"></div>
+                            <div class="contact_block">
+                                <a href="tel:+380669284338" class="">
+                                    <div class="phone_bg"></div>+38 (066) 928-43-38</a>
+                            </div>
+                            <div class="contact_block">
+                                <a href="mailto:perepravaplus@gmail.com" class="">
+                                    <div class="mail_bg"></div>perepravaplus@gmail.com</a>
+                            </div>
+                    </div>
+                    <div class="footer_cat">
+                        <span class="footer_block_title"> Направления </span>
+                        <div class = "bottom_border"></div>
+                        <ul>
+                            <li><a href="/product-category/fire/">Огонь</a></li>
+                            <li><a href="/product-category/water/">Вода</a></li>
+                            <li><a href="/product-category/earth/">Земля</a></li>
+                            <li><a href="/product-category/air/">Воздух</a></li>
+                            <li><a href="/product-category/space/">Космос</a></li>
+                            <li><a href="/product-category/certificate/">Сертификаты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_important">
+                        <span class="footer_block_title"> Важное </span>
+                        <div class = "bottom_border"></div>
+                        <ul>
+                            <li><a>FAQ</a></li>
+                            <li><a>Добавить обьявление</a></li>
+                            <li><a>Сотрудничество</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_soc">
+                        <span class="footer_block_title"> Соц сети </span>
+                        <div class = "bottom_border"></div>
+                        <div class="soc_icon_block">
+                            <a  href="https://instagram.com/perepravaplus?igshid=yfiei4ysn8zt" target="_blank">
+                                <div class="instagramm_bg"></div></a>
+                            <a  href="https://facebook.com/perepravaplus.zp" target="_blank">
+                                <div class="facebook_bg"></div></a>
+                        </div>
+                    </div>
+
+<!---->
+<!---->
+<!--                <div class="contact_block">-->
+<!--                    <a href="mailto:perepravaplus@gmail.com" class="">perepravaplus@gmail.com</a>-->
+<!--                </div>-->
+<!--                <div class="line_bottom"></div>-->
+<!--                <div class="contact_block">-->
+<!--                    <a href="tel:+380669284338" class=""> +38 (066) 928-43-38</a>-->
+<!--                </div>-->
+<!--                <div class="line_bottom"></div>-->
+<!--                <div class="soc_icon_block">-->
+<!--                    <a  href="https://instagram.com/perepravaplus?igshid=yfiei4ysn8zt" target="_blank"><i class="fab fa-instagram"></i></a>-->
+<!--                    <a  href="https://facebook.com/perepravaplus.zp" target="_blank"><i class="fab fa-facebook-square"></i></a>-->
 <!--                    <a href="#"> <i class="fab fa-instagram"></i></a>-->
 <!--                    <a href=""> <i class="fab fa-facebook-square"></i></a>-->
-                </div>
-
-                <?php
-                if (!empty($storecommerce_secure_payment_badge)):
-                    $storecommerce_secure_payment_badge = absint($storecommerce_secure_payment_badge);
-                    $storecommerce_secure_payment_badge = wp_get_attachment_image($storecommerce_secure_payment_badge, 'full');
-
-                    $storecommerce_secure_payment_badge_url = storecommerce_get_option('secure_payment_badge_url');
-                    $storecommerce_secure_payment_badge_url = isset($storecommerce_secure_payment_badge_url) ? esc_url($storecommerce_secure_payment_badge_url) : '#';
-
-                    ?>
-                    <div class="<?php echo esc_attr($class); ?>">
-                        <a href="<?php echo esc_url($storecommerce_secure_payment_badge_url); ?>">
-                            <?php echo $storecommerce_secure_payment_badge; ?>
-                        </a>
-                    </div>
-                <?php endif; ?>
-            </div>
+<!--                </div>-->
+<!---->
+<!--                --><?php
+//                if (!empty($storecommerce_secure_payment_badge)):
+//                    $storecommerce_secure_payment_badge = absint($storecommerce_secure_payment_badge);
+//                    $storecommerce_secure_payment_badge = wp_get_attachment_image($storecommerce_secure_payment_badge, 'full');
+//
+//                    $storecommerce_secure_payment_badge_url = storecommerce_get_option('secure_payment_badge_url');
+//                    $storecommerce_secure_payment_badge_url = isset($storecommerce_secure_payment_badge_url) ? esc_url($storecommerce_secure_payment_badge_url) : '#';
+//
+//                    ?>
+<!--                    <div class="--><?php //echo esc_attr($class); ?><!--">-->
+<!--                        <a href="--><?php //echo esc_url($storecommerce_secure_payment_badge_url); ?><!--">-->
+<!--                            --><?php //echo $storecommerce_secure_payment_badge; ?>
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                --><?php //endif; ?>
+<!--            </div>-->
 
         </div>
 
@@ -208,7 +255,6 @@
 <div class="footer_down_info">
     Pereprava production by Family brand supported by <a href="https://format4.plus/">Format</a>
 </div>
-
 
 <a id="scroll-up" class="secondary-color">
     <i class="fa fa-angle-up"></i>

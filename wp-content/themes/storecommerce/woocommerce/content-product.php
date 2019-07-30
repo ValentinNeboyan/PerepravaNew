@@ -126,14 +126,30 @@ if (empty($product) || !$product->is_visible()) {
                             <?php the_title(); ?>
                         </a>
                     </p>
+
+
+                    <?php
+
+                     if(!empty($product->get_meta( 'for_hour'))){
+                        $hour = $product->get_meta( 'for_hour');
+                     } ?>
+
+
                     <?php if(!empty($product->get_meta( 'usd_price'))){?>
-                        <p class="woocommerce-Price-amount"> <?php echo $product->get_meta( 'usd_price', true ); ?> USD</p>
+                        <p class="woocommerce-Price-amount"> <?php echo $product->get_meta( 'usd_price', true ); ?> USD / <?php echo $hour ?></p>
                     <?php } ?>
                     <?php if(!empty($product->get_meta('eur_price'))){?>
-                        <p class="woocommerce-Price-amount"><?php echo $product->get_meta('eur_price');?> EUR</p>
+                        <p class="woocommerce-Price-amount"><?php echo $product->get_meta('eur_price');?> EUR / <?php echo $hour ?></p>
                     <?php } ?>
-                    <?php if(empty($product->get_meta('usd_price')) && empty($product->get_meta( 'usd_price'))){?>
-                        <p class="top_info_price"> <?php do_action('storecommerce_woocommerce_after_shop_loop_item_title'); ?></p>
+                    <?php if(empty($product->get_meta('usd_price')) && empty($product->get_meta( 'eur_price'))){?>
+<!--                        --><?php //if (is_numeric($hour)) {?>
+<!--                            <p class="top_info_price"> --><?php //do_action('storecommerce_woocommerce_after_shop_loop_item_title'); ?><!-- <span class="woocommerce-Price-amount"> / --><?php //echo $hour ?><!-- час</span></p>-->
+<!--                        --><?php //} ?>
+<!--                        --><?php //if (!is_numeric($hour)) {?>
+                            <p class="top_info_price"> <?php do_action('storecommerce_woocommerce_after_shop_loop_item_title'); ?> <span class="woocommerce-Price-amount"> / <?php echo $hour ?></span></p>
+<!--                        --><?php //} ?>
+
+<!--                        <p class="top_info_price"> --><?php //do_action('storecommerce_woocommerce_after_shop_loop_item_title'); ?><!-- <span class="woocommerce-Price-amount"> / --><?php //echo $hour ?><!-- час</span></p>-->
                     <?php } ?>
                 <?php if(!empty($product->get_attribute('number_of_seats'))){?>
                     <p class="max_p">Максимально <?php echo $product->get_attribute('number_of_seats');?></p>

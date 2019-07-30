@@ -5,8 +5,8 @@
  * @package StoreCommerce
  */
 ?>
+<div class="flex_page">
 
-<div class="container_custom">
 <div class="header-style-3">
     <div class="desktop-header clearfix">
         <?php
@@ -29,7 +29,7 @@
             <div class="container-wrapper">
                 <div class="header-middle-part">
                     <div class="navigation-container">
-
+                        <div id="myList"><span class="return_menu">Все</span><i class="fas fa-arrow-right menu_right_arrow"></i></div>
                         <nav id="site-navigation" class="main-navigation">
                             <span class="toggle-menu" aria-controls="primary-menu" aria-expanded="false">
                                 <span class="screen-reader-text">
@@ -50,93 +50,15 @@
 
 
 
-
-                <div class="header-right-part">
-                    <?php if (function_exists('YITH_WCWL')): ?>
-                        <div class="wishlist-shop">
-                            <span class="wishlist-icon">
-                                <?php storecommerce_woocommerce_header_wishlist(); ?>
-                            </span>
-                        </div>
-                    <?php endif; ?>
-                    <?php if (class_exists('WooCommerce')): ?>
-                        <div class="account-user">
-                            <?php
-
-                            if (is_user_logged_in()) {
-                                $current_user = wp_get_current_user();
-                                //$account_texts = __('My Account', 'storecommerce');
-                                $account_texts = $current_user->display_name;
-                            } else {
-                                $account_texts = __('Login', 'storecommerce');
-                                if (get_option('users_can_register')) {
-                                    $account_texts = __('Login/Register', 'storecommerce');
-                                }
-                            }
-
-                            ?>
-
-                            <a class="aft-wishlist-trigger" href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>"
-                               title=" <?php echo esc_html($account_texts); ?>">
-                                <!--  my account --> <i class="far fa-user"></i>
-
-                            </a>
-                        </div>
-                    <?php endif; ?>
-<!--                    <div class="search aft-show-on-mobile">-->
-<!--                        <div id="myOverlay" class="overlay">-->
-<!--                            <span class="close-serach-form" title="Close Overlay">x</span>-->
-<!--                            <div class="overlay-content">-->
-<!--                                --><?php //custom_storecommerce_product_search_form(); ?>
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <button class="open-search-form"><i class="fas fa-search"></i></button>-->
-<!--                    </div>-->
-<!--                    <div class="account-user aft-show-on-mobile">-->
-<!--                        <a href="--><?php //echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?><!--">-->
-<!--                             my account -->
-<!--                    <i class="far fa-user-circle"></i>-->
-<!---->
-<!--                        </a>-->
-<!--                    </div>-->
-
-
-
-<!--                    --><?php //if (class_exists('WooCommerce')): ?>
-<!---->
-<!--                        <div class="cart-shop">-->
-<!---->
-<!--                            <div class="af-cart-wrapper dropdown">-->
-<!--                                --><?php //storecommerce_woocommerce_header_cart(); ?>
-<!--                            </div>-->
-<!---->
-<!--                        </div>-->
-<!--                    --><?php //endif; ?>
-                    <?php
-                    $show_offcanvas = true;
-                    if (is_active_sidebar('express-off-canvas-panel')): ?>
-                        <div class="express-off-canvas-panel aft-show-on-mobile">
-                                <span class="offcanvas">
-                                     <a href="#offcanvasCollapse" class="offcanvas-nav">
-                                          <i class="fa fa-th"></i>
-
-                                       </a>
-                                </span>
-                        </div>
-                    <?php endif; ?>
-
-
-                </div>
             </div>
         </div>
 <!--        <hr class="fx-header-line">-->
 
-    <div class="search fx-search">
-        <?php custom_storecommerce_product_search_form(); ?>
-    </div>
-    <div id="fx-Overlay" class="overlay">
+
 
 
 
 
 </div>
+
+    <div id="fx-Overlay" class="overlay">

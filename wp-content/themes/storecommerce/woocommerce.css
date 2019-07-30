@@ -5,8 +5,8 @@ WooCommerce styles override
 */
 
 @font-face {
-	font-family: 'Noto Sans JP', sans-serif; /* Имя шрифта */
-	src: url("assets/font-awesome/HelveticaNeue-CondensedBold.ttf"); /* Путь к файлу со шрифтом */
+	font-family: 'AvantGardeGothicC', sans-serif; /* Имя шрифта */
+	src: url("assets/font-awesome/AvantGardeGothicC Book.otf"); /* Путь к файлу со шрифтом */
 }
 #add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text {
 
@@ -1262,10 +1262,10 @@ body.woocommerce-cart article {
 body.woocommerce-js article .entry-title{
 	margin: 0;
 }
-body.woocommerce-js form{padding: 20px;}
+/*body.woocommerce-js form{padding: 20px;}*/
 
 body.woocommerce-js form{
-	/*background: #fff;*/
+	background: #f6f6f6;
 }
 .woocommerce table.wishlist_table {
 	font-size: 100%;
@@ -1831,11 +1831,11 @@ body .woocommerce-message,
 p.stars.selected a.active:before,
 p.stars.selected a:not(.active):before,
 .input-text::placeholder,
-input[type="text"]::placeholder,
+/*input[type="text"]::placeholder,*/
 input[type="email"]::placeholder,
 input[type="url"]::placeholder,
 input[type="password"]::placeholder,
-input[type="search"]::placeholder,
+/*input[type="search"]::placeholder,*/
 input[type="number"]::placeholder,
 input[type="tel"]::placeholder,
 input[type="range"]::placeholder,
@@ -1851,7 +1851,7 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"],
+/*input[type="search"],*/
 input[type="number"],
 input[type="tel"],
 input[type="range"],
@@ -1872,7 +1872,8 @@ body.woocommerce ul.products li.product .price del,
 ul.product-item-meta li a,
 body .woocommerce-product-details__short-description p
 {
-	color: #000;
+	color: #afafaf;;
+
 }
 
 
