@@ -265,12 +265,9 @@
     $product = get_post(get_the_ID());
     $attributes = get_post_meta(get_the_ID());
 
-    $screenWidth = $_COOKIE['screenWidth'] ? $_COOKIE['screenWidth'].'px' : '640px';
-    $screenHeight = $_COOKIE['screenHeight'] ? $_COOKIE['screenHeight'].'px' : '480px';
-
     echo rwmb_meta( 'map', array(
-        'width'        => $screenWidth,
-        'height'       => $screenHeight,
+        'width'        => '640px',
+        'height'       => '480px',
         'zoom'         => 11,
         'marker'       => true,
         'marker_title' => 'Кликни меня',

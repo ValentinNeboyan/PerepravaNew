@@ -1,8 +1,6 @@
 jQuery( function( $ ) {
 
-    //set cookies for google maps popup
-    Cookies.set('screenWidth', screen.width);
-    Cookies.set('screenHeight', screen.height);
+    $('.fx-location-popup .rwmb-map-canvas').css('width', screen.width ).css('height', screen.height);
 
     $(document).on('click', '.fx-video-popup', function () {
         $('.fx-product-youtube').addClass('active');
